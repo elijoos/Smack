@@ -8,6 +8,7 @@
 
 import UIKit
 
+//REMOTE FOR GITHUB IS "SMACK"
 class ChatVC: UIViewController {
 
     //Outlets
