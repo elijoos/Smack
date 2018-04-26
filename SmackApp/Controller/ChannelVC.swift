@@ -13,6 +13,7 @@ class ChannelVC: UIViewController {
     //Outlets
     //Having the button be an outlet because eventually we will change text of it
     @IBOutlet weak var loginBtn: UIButton!
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
