@@ -8,7 +8,26 @@
 
 import Foundation
 
-//Segues
+//SIMPLE DEFINITION RENAMING A TYPE
+typealias CompletionHandler = (_ Success: Bool) -> ()
+//example
+typealias Elijah = String
+let name: Elijah = "Eli"
+
+//URL CONSTANTS
+//added the "v1/" to it. This is the online heroku one. The local server is found in postman
+let BASE_URL = "https://smack-app-chat.herokuapp.com/v1/"
+//the account/register is the end part of the first method in the POSTMAN SERVER!!!
+let URL_REEGISTER = "\(BASE_URL)account/register"
+
+
+
+//SEGUES
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
+
+//USER DEFAULTS FOUNDATION
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "loggedIn"
+let USER_EMAIL = "userEmail"
