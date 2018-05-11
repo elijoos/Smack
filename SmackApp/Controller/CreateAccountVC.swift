@@ -31,6 +31,12 @@ class CreateAccountVC: UIViewController {
             if success {
                 //we just coded web request to server to api, api took info, created account object, and sent it to mongo db and saved it. (find db link in heroku)
                 print("registered user")
+                //Call our next api call to LOG IN USER
+                AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
+                    if success {
+                        print("user is logged in", AuthService.instance.authToken)
+                    }
+                })
             }
         }
     }
