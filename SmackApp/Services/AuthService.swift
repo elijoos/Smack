@@ -84,7 +84,7 @@ class AuthService {
             "email": lowerCaseEmail,
             "password": password
         ]
-        
+    
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
@@ -117,7 +117,54 @@ class AuthService {
         }
     }
     
-    
+    //Adding User api call
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        //setting values of body to be whatever we pass into this function
+        let body: [String: Any] = [
+            //replicating postman body for this function and setting it
+            "name": name,
+            "email": lowerCaseEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+            
+        ]
+        //Header; This time we have the Authorization header as well as other header
+        let header = [
+            //both our headers are in here. See how the Authorization header in postman "value" required "Bearer authtoken"!
+            //We basically trying to replicate the postman one
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            
+            if response.result.error == nil{
+                 guard let data = response.data else { return }
+                do {
+                    let json = try JSON(data: data)
+                    //putting the data we get back from our response AND CALL THAT FUNCTION FROM UserDataService TO SET THE USERDATA VARIABLES!
+                    let id = json["_id"].stringValue
+                    let color = json["avatarColor"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let email = json["email"].stringValue
+                    let name = json["name"].stringValue
+                    //Setting user data with UserDataService singleton method
+                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                    completion(true)
+                } catch {
+                    print (error.localizedDescription)
+                }
+                
+            } else {
+                //this completion method will tell us if the .request was a failure
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
     
     
     

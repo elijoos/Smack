@@ -20,7 +20,7 @@ let BASE_URL = "https://smack-app-chat.herokuapp.com/v1/"
 //the account/register is the end part of the first method in the POSTMAN SERVER!!!
 let URL_REEGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
-
+let URL_USER_ADD = "\(BASE_URL)user/add"
 
 //SEGUES
 let TO_LOGIN = "toLogin"

@@ -20,6 +20,7 @@
 		9A25948E20901CE40018D957 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25948D20901CE40018D957 /* LoginVC.swift */; };
 		9A56786520A27991008CAE35 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56786420A27991008CAE35 /* AuthService.swift */; };
 		9A56786720A5482B008CAE35 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56786620A5482B008CAE35 /* RoundedButton.swift */; };
+		9A9540D020A745820045AFF3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9540CF20A745820045AFF3 /* UserDataService.swift */; };
 		9AAD700B2092220D00401D44 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD700A2092220D00401D44 /* CreateAccountVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		9A25948D20901CE40018D957 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9A56786420A27991008CAE35 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9A56786620A5482B008CAE35 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9A9540CF20A745820045AFF3 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		9AAD700A2092220D00401D44 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				9A56786420A27991008CAE35 /* AuthService.swift */,
+				9A9540CF20A745820045AFF3 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				9A259487208E36840018D957 /* ChannelVC.swift in Sources */,
 				9A56786720A5482B008CAE35 /* RoundedButton.swift in Sources */,
 				9A259483208E363E0018D957 /* ChatVC.swift in Sources */,
+				9A9540D020A745820045AFF3 /* UserDataService.swift in Sources */,
 				9AAD700B2092220D00401D44 /* CreateAccountVC.swift in Sources */,
 				9A56786520A27991008CAE35 /* AuthService.swift in Sources */,
 				9A25948E20901CE40018D957 /* LoginVC.swift in Sources */,
