@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B5D68E3AD8F097BFFFE8E57 /* Pods_SmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E5A5F3C51BCDF2C046A750 /* Pods_SmackApp.framework */; };
+		9A21C1E620B09E6300EE5276 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21C1E520B09E6300EE5276 /* AvatarPickerVC.swift */; };
+		9A21C1E820B0A04400EE5276 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21C1E720B0A04400EE5276 /* AvatarCell.swift */; };
 		9A2594692087B5BE0018D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2594682087B5BE0018D957 /* AppDelegate.swift */; };
 		9A25946E2087B5BE0018D957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A25946C2087B5BE0018D957 /* Main.storyboard */; };
 		9A2594702087B5BE0018D957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A25946F2087B5BE0018D957 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		0AF75CDC5AA966A1226D822D /* Pods-SmackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackApp/Pods-SmackApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3E03FDD64F3FE6A70F8EC89D /* Pods-SmackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmackApp/Pods-SmackApp.release.xcconfig"; sourceTree = "<group>"; };
 		94E5A5F3C51BCDF2C046A750 /* Pods_SmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A21C1E520B09E6300EE5276 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		9A21C1E720B0A04400EE5276 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		9A2594652087B5BE0018D957 /* SmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2594682087B5BE0018D957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A25946D2087B5BE0018D957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				9A259486208E36840018D957 /* ChannelVC.swift */,
 				9A25948D20901CE40018D957 /* LoginVC.swift */,
 				9AAD700A2092220D00401D44 /* CreateAccountVC.swift */,
+				9A21C1E520B09E6300EE5276 /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				9A259488208E44E50018D957 /* GradientView.swift */,
 				9A56786620A5482B008CAE35 /* RoundedButton.swift */,
+				9A21C1E720B0A04400EE5276 /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A259487208E36840018D957 /* ChannelVC.swift in Sources */,
+				9A21C1E620B09E6300EE5276 /* AvatarPickerVC.swift in Sources */,
 				9A56786720A5482B008CAE35 /* RoundedButton.swift in Sources */,
 				9A259483208E363E0018D957 /* ChatVC.swift in Sources */,
 				9A9540D020A745820045AFF3 /* UserDataService.swift in Sources */,
@@ -311,6 +318,7 @@
 				9A56786520A27991008CAE35 /* AuthService.swift in Sources */,
 				9A25948E20901CE40018D957 /* LoginVC.swift in Sources */,
 				9A259489208E44E50018D957 /* GradientView.swift in Sources */,
+				9A21C1E820B0A04400EE5276 /* AvatarCell.swift in Sources */,
 				9A2594692087B5BE0018D957 /* AppDelegate.swift in Sources */,
 				9A25947E208BF57B0018D957 /* SWRevealViewController.m in Sources */,
 				9A25948C209016AA0018D957 /* Constants.swift in Sources */,
