@@ -10,6 +10,7 @@
 		8B5D68E3AD8F097BFFFE8E57 /* Pods_SmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E5A5F3C51BCDF2C046A750 /* Pods_SmackApp.framework */; };
 		9A21C1E620B09E6300EE5276 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21C1E520B09E6300EE5276 /* AvatarPickerVC.swift */; };
 		9A21C1E820B0A04400EE5276 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21C1E720B0A04400EE5276 /* AvatarCell.swift */; };
+		9A21C1EA20B330B500EE5276 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21C1E920B330B500EE5276 /* CircleImage.swift */; };
 		9A2594692087B5BE0018D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2594682087B5BE0018D957 /* AppDelegate.swift */; };
 		9A25946E2087B5BE0018D957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A25946C2087B5BE0018D957 /* Main.storyboard */; };
 		9A2594702087B5BE0018D957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A25946F2087B5BE0018D957 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		94E5A5F3C51BCDF2C046A750 /* Pods_SmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A21C1E520B09E6300EE5276 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		9A21C1E720B0A04400EE5276 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		9A21C1E920B330B500EE5276 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		9A2594652087B5BE0018D957 /* SmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2594682087B5BE0018D957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A25946D2087B5BE0018D957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				9A259488208E44E50018D957 /* GradientView.swift */,
 				9A56786620A5482B008CAE35 /* RoundedButton.swift */,
 				9A21C1E720B0A04400EE5276 /* AvatarCell.swift */,
+				9A21C1E920B330B500EE5276 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				9A259487208E36840018D957 /* ChannelVC.swift in Sources */,
 				9A21C1E620B09E6300EE5276 /* AvatarPickerVC.swift in Sources */,
 				9A56786720A5482B008CAE35 /* RoundedButton.swift in Sources */,
+				9A21C1EA20B330B500EE5276 /* CircleImage.swift in Sources */,
 				9A259483208E363E0018D957 /* ChatVC.swift in Sources */,
 				9A9540D020A745820045AFF3 /* UserDataService.swift in Sources */,
 				9AAD700B2092220D00401D44 /* CreateAccountVC.swift in Sources */,

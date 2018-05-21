@@ -14,6 +14,12 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 typealias Elijah = String
 let name: Elijah = "Eli"
 
+//COLORS
+let smackPurplePlaceholder = #colorLiteral(red: 0.2588235294, green: 0.3294117647, blue: 0.7254901961, alpha: 0.5)
+
+//NOTIFICATION CONSTANTS
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+
 //URL CONSTANTS
 //added the "v1/" to it. This is the online heroku one. The local server is found in postman
 let BASE_URL = "https://smack-app-chat.herokuapp.com/v1/"
