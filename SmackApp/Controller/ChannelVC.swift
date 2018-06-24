@@ -43,7 +43,17 @@ class ChannelVC: UIViewController {
     }
 
     @IBAction func loginBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        //If not logged in, take to login page. If we are then show profile page (popup one)
+        if AuthService.instance.isLoggedIn {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+            
+            
+        } else {
+            //We have not logged in yet and need to
+             performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
     }
     
 
