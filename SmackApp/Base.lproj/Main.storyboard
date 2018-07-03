@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -79,7 +72,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUf-Zc-3UI">
-                                                    <rect key="frame" x="35" y="11.5" width="65.5" height="20"/>
+                                                    <rect key="frame" x="35" y="12" width="65.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -149,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKg-eX-zzm" customClass="RoundedButton" customModule="SmackApp" customModuleProvider="target">
-                                <rect key="frame" x="62" y="289" width="250" height="50"/>
+                                <rect key="frame" x="62.5" y="289" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35667121410369873" green="0.62393754720687866" blue="0.79712057113647461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="D0Y-LD-1Gb"/>
@@ -164,6 +157,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="439-FU-YjI" eventType="touchUpInside" id="VsO-m4-cCx"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-A4-54N">
                                 <rect key="frame" x="62.5" y="160" width="250" height="89"/>
@@ -243,6 +239,10 @@
                                     <action selector="createAccountBtnPressed:" destination="439-FU-YjI" eventType="touchUpInside" id="Qwi-Zz-fjV"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HHp-5q-dpb">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2627450980392157" green="0.33725490196078434" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -255,11 +255,16 @@
                             <constraint firstItem="6LM-wJ-7bg" firstAttribute="top" secondItem="4S5-FP-vgy" secondAttribute="top" constant="8" id="enf-7b-Set"/>
                             <constraint firstItem="f3g-A4-54N" firstAttribute="centerX" secondItem="Qfc-On-VvE" secondAttribute="centerX" id="fZF-wr-sed"/>
                             <constraint firstItem="MKo-6s-wDJ" firstAttribute="centerX" secondItem="Qfc-On-VvE" secondAttribute="centerX" id="ixu-1h-7Ey"/>
+                            <constraint firstItem="HHp-5q-dpb" firstAttribute="centerY" secondItem="Qfc-On-VvE" secondAttribute="centerY" constant="-100" id="rYI-vC-2kW"/>
                             <constraint firstItem="MKo-6s-wDJ" firstAttribute="top" secondItem="jKg-eX-zzm" secondAttribute="bottom" id="wZ2-Pv-tEO"/>
+                            <constraint firstItem="HHp-5q-dpb" firstAttribute="centerX" secondItem="Qfc-On-VvE" secondAttribute="centerX" id="zdn-eE-ged"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4S5-FP-vgy"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="ymk-IO-HRf" id="2z4-O6-76l"/>
+                        <outlet property="spinner" destination="HHp-5q-dpb" id="jy5-zR-QLF"/>
+                        <outlet property="usernameTxt" destination="RWP-L5-6pW" id="TQw-AQ-IuO"/>
                         <segue destination="8jG-EX-97I" kind="show" identifier="toCreateAccount" id="VZS-e7-v0a"/>
                     </connections>
                 </viewController>
@@ -360,13 +365,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create An Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-Hd-U2a">
-                                <rect key="frame" x="101.5" y="60" width="171.5" height="23"/>
+                                <rect key="frame" x="102" y="60" width="171.5" height="23"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb9-1E-4sz">
-                                <rect key="frame" x="137" y="304" width="100" height="130"/>
+                                <rect key="frame" x="137.5" y="304" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="5Mc-X9-u7o"/>
                                 </constraints>

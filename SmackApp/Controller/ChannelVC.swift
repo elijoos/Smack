@@ -21,6 +21,7 @@ class ChannelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         //showing more of the side panel
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         
@@ -31,6 +32,7 @@ class ChannelVC: UIViewController {
     @objc func userDataDidChange(_ notif: Notification) {
         //If registered+logged in, make this VC show the Username and profile pic. But not when logged out
         if AuthService.instance.isLoggedIn {
+            self.loginBtn.titleLabel?.text = UserDataService.instance.name
             loginBtn.setTitle("\(UserDataService.instance.name)", for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
             //returnUIColor from UserDataVC
@@ -41,8 +43,13 @@ class ChannelVC: UIViewController {
             userImg.backgroundColor = UIColor.clear
         }
     }
+    
 
     @IBAction func loginBtnPressed(_ sender: Any) {
+        if loginBtn.titleLabel?.text == "Login" {
+            //We have not logged in yet and need to
+            performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
         //If not logged in, take to login page. If we are then show profile page (popup one)
         if AuthService.instance.isLoggedIn {
             let profile = ProfileVC()

@@ -27,6 +27,7 @@ let BASE_URL = "https://smack-app-chat.herokuapp.com/v1/"
 let URL_REEGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/" //In auth service we will append the user email to end
 
 //SEGUES
 let TO_LOGIN = "toLogin"
@@ -42,5 +43,11 @@ let USER_EMAIL = "userEmail"
 //Headers
 let HEADER =  [
     //LOOK IN POSTMAN. Click #1 and then see "Content-Type", and "
+    "Content-Type": "application/json; charset=utf-8"
+]
+let BEARER_HEADER = [
+    //both our headers are in here. See how the Authorization header in postman "value" required "Bearer authtoken"!
+    //We basically trying to replicate the postman one
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]

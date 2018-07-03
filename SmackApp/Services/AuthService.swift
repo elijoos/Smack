@@ -131,31 +131,21 @@ class AuthService {
             "avatarColor": avatarColor
             
         ]
-        //Header; This time we have the Authorization header as well as other header
-        let header = [
-            //both our headers are in here. See how the Authorization header in postman "value" required "Bearer authtoken"!
-            //We basically trying to replicate the postman one
-            "Authorization": "Bearer \(AuthService.instance.authToken)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
+        //Header; This time we have the Authorization header as well as other header MOVED TO CONSTANTS
+//        let header = [
+//            //both our headers are in here. See how the Authorization header in postman "value" required "Bearer authtoken"!
+//            //We basically trying to replicate the postman one
+//            "Authorization": "Bearer \(AuthService.instance.authToken)",
+//            "Content-Type": "application/json; charset=utf-8"
+//        ]
         
-        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseString { (response) in
             
             if response.result.error == nil{
                  guard let data = response.data else { return }
                 do {
-                    let json = try JSON(data: data)
-                    //putting the data we get back from our response AND CALL THAT FUNCTION FROM UserDataService TO SET THE USERDATA VARIABLES!
-                    let id = json["_id"].stringValue
-                    let color = json["avatarColor"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let email = json["email"].stringValue
-                    let name = json["name"].stringValue
-                    //Setting user data with UserDataService singleton method
-                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                    self.setUserInfo(data: data)
                     completion(true)
-                } catch {
-                    print (error.localizedDescription)
                 }
                 
             } else {
@@ -166,8 +156,53 @@ class AuthService {
         }
     }
     
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        //create our url in utilities called URL_USER_BY_EMAIL
+        //dont need a body or anything for this call, but will use a header
+        //This function allows us to, if we are logged in, to access any of the user's profile info by just passing in an email
+        //AlamoFireRequest. See how we append the userEmail to the end of it???
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            //YO! BASICALLY DOING EXACTLY WHAT W DID IN THE "URL_USER_ADD" body of function above in this file
+            if response.result.error == nil{
+                guard let data = response.data else { return }
+               // self.setUserInfo(data: data)
+                do{
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let color = json["avatarColor"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let email = json["email"].stringValue
+                    let name = json["name"].stringValue
+                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                } catch {
+                    print (error.localizedDescription)
+                }
+                
+            } else {
+                //this completion method will tell us if the .request was a failure
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+        
+    }
     
-    
+    func setUserInfo(data: Data) {
+        do{
+        let json = try JSON(data: data)
+            let id = json["_id"].stringValue
+            let color = json["avatarColor"].stringValue
+            let avatarName = json["avatarName"].stringValue
+            let email = json["email"].stringValue
+            let name = json["name"].stringValue
+            UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+        } catch {
+             print (error.localizedDescription)
+        }
+        //putting the data we get back from our response AND CALL THAT FUNCTION FROM UserDataService TO SET THE USERDATA VARIABLES!
+        
+    }
     
     
     
